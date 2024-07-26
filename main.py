@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-import calendar
+from schedule import Schedule
 
 def main():
-    print(calendar.monthrange(2023, 1))
+    schedule = Schedule(8, 2024)
+    schedule.print_table()
 
 if __name__ == "__main__":
     main()
