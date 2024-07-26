@@ -18,15 +18,21 @@ class Schedule():
 
     def print_day_num_row(self):
         for i in range (1, self.num_days + 1):
-            print(i, end = ' ')
+            if i < 9:
+                print(f" {i}", end = '  ')
+            else:
+                print(f" {i}", end = ' ')
         print()
+
+    def truncate_words(self, words, num_chars):
+        return [word[:num_chars] for word in words]
 
     def print_day_name_row(self):
         start_day = calendar.monthrange(self.year, self.month)[0]
-        day_names = list(calendar.day_name)
+        day_names = self.truncate_words(list(calendar.day_name), 2)
 
         for i in range (0, self.num_days):
-            print(day_names[(start_day + i) % 7], end = ' ')
+            print(day_names[(start_day + i) % 7], end = '  ')
         print()
 
     def print_table(self):
