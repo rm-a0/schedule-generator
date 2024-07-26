@@ -16,7 +16,19 @@ class Schedule():
     def get_num_days(self):
         self.num_days = calendar.monthrange(self.year, self.month)[1]
 
-    def print_table(self):
+    def print_day_num_row(self):
         for i in range (1, self.num_days + 1):
             print(i, end = ' ')
         print()
+
+    def print_day_name_row(self):
+        start_day = calendar.monthrange(self.year, self.month)[0]
+        day_names = list(calendar.day_name)
+
+        for i in range (0, self.num_days):
+            print(day_names[(start_day + i) % 7], end = ' ')
+        print()
+
+    def print_table(self):
+        self.print_day_num_row()
+        self.print_day_name_row()
