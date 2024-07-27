@@ -25,13 +25,13 @@ class Schedule():
 
         if align == "center":
             padding = (width - word_len) // 2
-            print(' ' * padding + c_str + ' ' * (width - word_len - padding), end = ' ')
+            print(' ' * padding + c_str + ' ' * (width - word_len - padding), end = '')
 
         elif align == "left":
-            print(c_str + ' ' * (width - word_len), end = ' ')
+            print(c_str + ' ' * (width - word_len), end = '')
 
         elif align == "right":
-            print(' ' * (width - word_len) + c_str, end = ' ')
+            print(' ' * (width - word_len) + c_str, end = '')
 
     def print_day_num_row(self):
         for i in range (1, self.num_days + 1):
@@ -46,6 +46,12 @@ class Schedule():
             self.print_cell(day_names[(start_day + i) % 7], 4, "center")
         print()
 
+    def print_line_row(self):
+        for i in range (0, self.num_days):
+            self.print_cell("----", 4, "center")
+        print()
+
     def print_table(self):
         self.print_day_num_row()
         self.print_day_name_row()
+        self.print_line_row()
