@@ -4,11 +4,15 @@ class Employee():
         self.age = age
         self.contract_type = contract_type
         self.shift_pref = None
-        self.hours_per_month = None
+        self.min_hpm = None
+        self.max_hpm = None
 
     def change_shift_pref(self, new_shift_pref):
         self.shift_pref = new_shift_pref
 
-    def change_hpm(self, new_hpm):
-        self.hours_per_month = new_hpm
+    def change_min_hpm(self, new_min_hpm):
+        self.min_hpm = new_min_hpm
+
+    def change_max_hpm(self, new_max_hpm):
+        self.max_hpm = new_max_hpm
 
