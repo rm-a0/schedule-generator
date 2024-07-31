@@ -6,6 +6,7 @@ class Employee():
         self.shift_pref = None
         self.min_hpm = None
         self.max_hpm = None
+        self.shifts = []
 
     def change_shift_pref(self, new_shift_pref):
         self.shift_pref = new_shift_pref
@@ -15,4 +16,10 @@ class Employee():
 
     def change_max_hpm(self, new_max_hpm):
         self.max_hpm = new_max_hpm
+
+    def change_shift(self, index, shift):
+        try:
+            self.shifts[index] = shift.name
+        except IndexError:
+            print("shift index out of range")
 
