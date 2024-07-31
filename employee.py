@@ -22,4 +22,3 @@ class Employee():
             self.shifts[index] = shift.name
         except IndexError:
             print("shift index out of range")
-
