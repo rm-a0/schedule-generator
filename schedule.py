@@ -54,11 +54,15 @@ class Schedule():
             self.print_cell("-", 1, "center")
         print()
 
-    def print_employee_row(self, employee):
-        self.print_cell(employee.name, len(employee.name), "center")
+    def print_employee_row(self, employees):
+        for employee in employees:
+            self.print_cell(employee.name, len(calendar.month_name[self.month]) + 2, "center")
+            self.print_cell(employee.name, 4, "center")
+            print()
+        print()
 
-    def print_table(self, employee):
+    def print_table(self, employees):
         self.print_day_num_row()
         self.print_day_name_row()
         self.print_line_row()
-        self.print_employee_row(employee)
+        self.print_employee_row(employees)
