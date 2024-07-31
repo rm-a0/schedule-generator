@@ -1,9 +1,13 @@
 class Shift():
-    def __init__(self, day, min_emps, max_emps):
-        self.day = day
-        self.min_emps = min_emps
-        self.max_emps = max_emps
-        self.employees = []
+    def __init__(self, name, start, end, break):
+        self.name = name
+        self.start = start
+        self.end = end
+        self.break = break
 
-    def add_employee(self, employee)
-        self.employees = 
+    def calc_duration(self):
+        print("todo")
+        #return end - start
+
+    def calc_pay(self, hourly_wage):
+        #return (self.cacl_duration() - self.break) * hourly_wage

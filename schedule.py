@@ -11,7 +11,7 @@ class Schedule():
         self.employees.append(employee)
 
     def remove_employee(self, employee):
-        employees.remove(employee)
+        self.employees.remove(employee)
 
     def get_num_days(self):
         self.num_days = calendar.monthrange(self.year, self.month)[1]
@@ -54,7 +54,11 @@ class Schedule():
             self.print_cell("-", 1, "center")
         print()
 
-    def print_table(self):
+    def print_employee_row(self, employee):
+        self.print_cell(employee.name, len(employee.name), "center")
+
+    def print_table(self, employee):
         self.print_day_num_row()
         self.print_day_name_row()
         self.print_line_row()
+        self.print_employee_row(employee)
