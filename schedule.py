@@ -1,10 +1,11 @@
 import calendar
 
 class Schedule():
-    def __init__(self, month, year):
+    def __init__(self, month, year, cell_width):
         self.month = month
         self.year = year
         self.month_cell_width = len(calendar.month_name[month]) + 2
+        self.cell_width = cell_width
         self.employees = []
         self.get_num_days()
 
@@ -37,7 +38,7 @@ class Schedule():
     def print_day_num_row(self):
         self.print_cell(calendar.month_name[self.month], self.month_cell_width, "center")
         for i in range (1, self.num_days + 1):
-            self.print_cell(i, 4, "center")
+            self.print_cell(i, self.cell_width, "center")
         print()
 
     def print_day_name_row(self):
@@ -47,18 +48,18 @@ class Schedule():
         self.print_cell("", self.month_cell_width, "center")
 
         for i in range (0, self.num_days):
-            self.print_cell(day_names[(start_day + i) % 7], 4, "center")
+            self.print_cell(day_names[(start_day + i) % 7], self.cell_width, "center")
         print()
 
     def print_line_row(self):
-        for i in range (0, self.num_days*4 + self.month_cell_width):
+        for i in range (0, self.num_days*self.cell_width + self.month_cell_width):
             self.print_cell("-", 1, "center")
         print()
 
     def print_employee_row(self, employees):
         for employee in employees:
             self.print_cell(employee.name, self.month_cell_width, "center")
-            self.print_cell(employee.name, 4, "center")
+            self.print_cell(employee.name, self.cell_width, "center")
             print()
         print()
 
