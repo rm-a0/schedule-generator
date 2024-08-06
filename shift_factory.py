@@ -70,7 +70,7 @@ class ShiftFactory:
     @staticmethod
     def init_f7():
         return Shift(
-            "F3",
+            "F7",
             time(5,0),
             time(14,0),
             30
