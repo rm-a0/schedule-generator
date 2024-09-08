@@ -1,10 +1,10 @@
 # Overview
 Automatic monthly schedule generator customized for cleaning company based in Germany
 
-# Desription 
+# Desription
 Schedul generator that takes into consideration multiple constraints, preferences and limitations and generates optimal shedules according to them.
 
-# How to Install and Run 
+# How to Install and Run
 Download or clone this repository
 ```
 git clone https://github.com/rm-a0/schedule-generator
